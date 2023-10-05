@@ -17,8 +17,22 @@ const checkboxContainer = document.getElementById('checkboxContainer');
             document.myForm[elementName].style.border = "";
         }
     }
+function checkcheckboxcondition(){
+    var sources= document.querySelector('input[name="source"]:checked').value;
+if(sources==null || sources==" "){
 
-    let isFirstNameInValid = true;
+
+    errordisplay(document.querySelector('input[name="source"]:checked').name, true);
+    ischeckedSource = true;
+    }
+else {
+    errordisplay(document.querySelector('input[name="source"]:checked').name, false);
+    ischeckedSource = false;
+}
+
+}
+   
+let isFirstNameInValid = true;
     let isLastNameInValid = true;
 
     let isEmailInValid = true;
@@ -28,6 +42,8 @@ const checkboxContainer = document.getElementById('checkboxContainer');
      let isAddressinvalid=true;
      let isCityinvalid=true;
      let isStateinvalid=true;
+     let ischeckedSource=true;
+
     const validate = event => {
         console.log('input');
         const {id, value, name} = event.target;
@@ -142,8 +158,8 @@ break;
         console.log('submit');
         // To avoid page refresh
         e.preventDefault();
-
-        if(!isCommentsinvalid ||!isFirstNameInValid || !isLastNameInValid || !isEmailInValid || !isPhoneNumberInValid || !isZipInvalied || !isAddressinvalid || !isCityinvalid || !isStateinvalid ){
+        // checkcheckboxcondition();
+        if(!ischeckedSource||!isCommentsinvalid ||!isFirstNameInValid || !isLastNameInValid || !isEmailInValid || !isPhoneNumberInValid || !isZipInvalied || !isAddressinvalid || !isCityinvalid || !isStateinvalid ){
             alert("Data entered successfully");
             createTable();
             console.log(document.getElementById("container-table"));
@@ -163,6 +179,8 @@ break;
     document.myForm.addEventListener('input', validate);
     document.myForm.addEventListener('submit', submitted);
     document.myForm.addEventListener('reset', reset);
+    // document.myForm.addEventListener('checkcheckboxcondition', checkcheckboxcondition);
+
     function createcheckbox(payload) {
         // var selectElement = document.querySelector('#courses');
         // var output = selectElement.value;
@@ -199,7 +217,7 @@ break;
 
     function createTable(){
 
-var trx= document.querySelector('input[name="rating"]:checked').value;
+var test= document.querySelector('input[name="rating"]:checked').value;
 var sar= document.querySelector('input[name="title"]:checked').value;
 var sources= document.querySelector('input[name="source"]:checked').value;
 var rating= document.querySelector('input[name="rating"]:checked').value;
@@ -239,7 +257,7 @@ var inc=0;
 var addingRow=document.getElementById("mytable")
 var NewRow=addingRow.insertRow(num);
 list1[inc]=sar;
-list2[inc]=trx;
+list2[inc]=test;
 list3[inc]=document.getElementById("emailId").value;
 list4[inc]=document.getElementById("phoneNumber").value;
 list5[inc]=document.getElementById("address").value;
