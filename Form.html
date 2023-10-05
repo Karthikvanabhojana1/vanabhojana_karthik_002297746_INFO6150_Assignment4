@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Feedback</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    label {	float: left;
+			width: 150px;}
+      #container{
+          width: 700px;
+          margin: auto;
+          background-color: beige;
+      } 
+      main{
+          padding: 50px;
+      }
+  </style>
+ </head>
+ <body>
+ <div id="container">
+	 
+	 <main>
+	 <h2>Feeback</h2>
+	 <h3>Love something? Hate something? Let us know!</h3>
+		 Note : Fields marked with an asterisk(*) are mandatory
+		 <br><br>
+		 <form method="post" novalidate id="myform" name="myForm">
+			<div class="control">
+			<label>Title*:</label>
+			<input type="radio" name="title" id="miss" value="miss" required/>Miss
+			<input type="radio" name="title" id="mr" value="mr" required/>Mr.
+			<input type="radio" name="title" id="mrs" value="mrs" required/>Mrs.
+			<br><br>
+			</div>
+			<div id="error_title" style="display: none; color: red;">
+				 Please select a valid option.
+				<br><br>
+			</div>
+
+			<div class="control">
+			<label for="firstName">First Name*:</label>
+			<input type="text" name="firstName" id="firstName" placeholder="First Name" />	
+			<br><br>
+			</div>
+
+			<div id="error_firstName" style="display: none; color: red;">
+				Invalid First Name, Please enter valid First Name.
+				<br><br>
+			</div>
+			
+			<div class="control">
+			<label for="lastName">Last Name*:</label>
+			<input type="text" name="lastName" id="lastName" placeholder="Last Name" />
+			<br><br>
+		</div>
+
+		<div id="error_lastName" style="display: none; color: red;">
+            Invalid Last Name, Please enter valid Last Name.
+            <br><br>
+        </div>
+		
+			<div class="control">
+			<label for="emailId">Email Id*:</label>
+			<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" />
+			<br><br>
+		</div>
+
+		<div id="error_emailId" style="display: none; color: red;">
+            Invalid Email, Please enter valid Email.
+            <br><br>
+        </div>
+
+			<div class="control">
+			<label for="phoneNumber">Phone Number*:</label>
+			<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" />
+			<br><br>
+		</div>
+
+		<div id="error_phoneNumber" style="display: none; color: red;">
+            Invalid Phone Number, Please enter valid Phone Number.
+            <br><br>
+        </div>
+		
+		<div class="control">
+			<label for="address">Street Address*:</label>
+			<input type="text" name="address" id="address" placeholder="Street Address" />	
+			<br><br>
+			</div>
+
+			<div id="error_address" style="display: none; color: red;">
+				Invalid Address, Please enter valid Addreaa.
+				<br><br>
+			</div>
+
+			<div class="control">
+				<label for="address2">Street Address 2:</label>
+				<input type="text" name="address2" id="address2" placeholder="Street Address 2" />	
+				<br><br>
+				</div>
+	
+
+				<div class="control">
+					<label for="city">City*:</label>
+					<input type="text" name="city" id="city" placeholder="City" />	
+					<br><br>
+					</div>
+		
+					<div id="error_city" style="display: none; color: red;">
+						Invalid City Name, Please enter valid City.
+						<br><br>
+					</div>
+	<div class="control">
+					<label for="state">State*:</label>
+					<input type="state" name="state" id="state" placeholder=" State" />	
+					<br><br>
+					</div>
+		
+					<div id="error_state" style="display: none; color: red;">
+						Invalid State, Please enter valid Apartment Number.
+						<br><br>
+					</div>
+	
+
+			<div class="control">
+            <label for="zipcode">ZipCode*:</label>
+			<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" />
+			<br><br>
+		</div>
+
+		<div id="error_zipcode" style="display: none; color: red;">
+            Invalid Zip Code, Please enter valid name.
+            <br><br>
+        </div> 
+		<div>
+			<label for="menu">Menu*:</label>
+			<select name="menu" id="menu" onchange="createcheckbox(this)"  required>
+				<option value="select"></option>
+				<option value="Sushi">Sushi</option>
+				<option value="Barritos ">Barritos  </option>
+				<option value="Salad">Salad</option>
+				<option value="Desert">Desert </option>
+				<option value="Mocha">Mocha</option>
+
+			  </select>
+			  <br><br>
+			</div>
+		<div id="expandcheckbox" style="display: none";>
+			<div id="checkbox"  style="visibility: hidden;">
+				<label for="rating">Rate the Food*:</label>
+	<br>	
+	<br>
+				<input type="checkbox" id="rating" name="rating" value="Excellent" onclick=textbox(this)><label for="rating"> Excellent</label> <br>
+				<input type="checkbox" id="rating" name="rating" value="Very Good" onclick=textbox(this)><label for="rating"> Very Good</label>  <br>
+				<input type="checkbox" id="rating" name="rating" value="Good" onclick=textbox(this)><label for="rating"> Good</label>  <br>
+				<input type="checkbox" id="rating" name="rating" value="Average" onclick=textbox(this)><label for="rating"> Average</label> <br>
+				<input type="checkbox" id="rating" name="rating" value="Bad" onclick=textbox(this)><label for="rating"> Bad</label>  <br>
+				<input type="checkbox" id="rating" name="rating" value="Very Bad" onclick=textbox(this)><label for="rating"> Very Bad</label>  <br>
+			</div>
+	
+	
+			<div id="textFieldContainer" style="display: none;">
+				<br>
+				<br>
+				<label>Service Feedback</label>
+				<input type="text" id="servicefeedback" name="servicefeedback" ><label for="servicefeedback" placeholder="Service Feedback" >
+				<br><br>
+			</div>
+		</div>
+		
+		
+			<div class="control">
+				<br><br>
+            <label for="source">How did you hear*:</label>
+			<input type='checkbox' name="source" value="facebook" /> Facebook
+            <input type='checkbox' name="source" value="google"/> Google
+            <input type='checkbox' name="source" value="yelp"  /> Yelp 
+			<br><br> 
+		</div>
+ 
+		<div id="error_name" style="display: none; color: red;">
+           Please select where did got the reference
+            <br><br>
+        </div>
+
+			<div class="control">
+			<label for="comments">Comments*:</label>
+			<textarea name="comments" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
+			<br><br>
+		</div>
+		
+
+		<div id="error_comments" style="display: none; color: red;">
+            Invalid Comments, Please enter valid name.
+            <br><br>
+        </div>
+		<input type="submit" value="Submit" name="submit" id="submit" onclick="submitted(this)">
+        <input type="reset" value="Reset" id="Reset" name="reset" onclick="reset(this)">
+			<br><br>
+		 </form>
+	 </main>
+	 
+ </div>
+ <div class="container-table" id="container-table">
+	<table class="mytable" id="mytable">
+		<tr>
+		  <th>Title</th>
+		  <th>First Name</th>
+		  <th>Last Name</th>
+		  <th>Email Id</th>
+		  <th>Phone Number</th>
+		  <th>Street Address</th>
+		  <th>Street Address 2</th>
+		  <th>City</th>
+		  <th>State</th>
+		  <th>ZipCode</th>
+		  <th>Menu</th>
+		  <th>Ratings</th>
+		  <th>Service Feedback</th>
+		  <th>How did you hear</th>
+		  <th>Comments</th>
+		  
+		  
+		</tr>
+		
+	  </table>
+ </div>
+ <script src="Script.js">
+ </script>
+
+ </body>
+</html>
